@@ -1,1 +1,12 @@
+#.gitignore
+*.orig
+*.rej
 *.o
+#patches
+dwm
+st
+slock
+surf
+dmenu
+dwmblocks
+
