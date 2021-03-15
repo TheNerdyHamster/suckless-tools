@@ -1,22 +1,22 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 0;        /* 0 means bottom bar */
+static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = {
                     "FiraCode Nerd Font:size=9:antialias=true:autohint=true",
                     "Hack:size=8:antialias=true:autohint=true",
                     "JoyPixels:size=10:antialias=true:autohint=true"
 };
 static const char dmenufont[]       = "Hack:size=10";
-static const char col_gray1[]       = "#282828"; /* Normal bg */
-static const char col_gray2[]       = "#98971a"; /* Normal border */
-static const char col_gray3[]       = "#ebdbb2"; /* Normal fg */
-static const char col_gray4[]       = "#373532"; /* Selected fg */
-static const char col_cyan[]        = "#9ec07c"; /* Selected border/bg */
+static const char col_gray1[]       = "#282a36"; /* Normal bg */
+static const char col_gray2[]       = "#8be9fd"; /* Normal border */
+static const char col_gray3[]       = "#f8f8f2"; /* Normal fg */
+static const char col_gray4[]       = "#f8f8f2"; /* Selected fg */
+static const char col_cyan[]        = "#44475a"; /* Selected border/bg */
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -24,7 +24,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "ﱘ", "" };
+static const char *tags[] = { "", "", "", "", "", "ﱘ", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -37,6 +37,8 @@ static const Rule rules[] = {
 	{ "Spotify",  NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "discord",  NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Slack",    NULL,       NULL,       1 << 3,       0,           -1 },
+	/* Floating windows */
+	{ "mpv",      NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -85,6 +87,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_v,      spawn,          SHCMD("mpv /dev/video0")},
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -95,7 +98,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_l,      tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
+	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 5  } },
+	{ MODKEY|ALTKEY,                XK_equal,  setgaps,        {.i = 0  } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
