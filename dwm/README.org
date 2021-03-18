@@ -1,0 +1,42 @@
+#+TITLE: The Nerdy Hamster Emacs
+#+AUTHOR: Leo Rönnebro
+
+* Bindings
+
+| Modifier        | Key     | Function                                  |
+|-----------------+---------+-------------------------------------------|
+| M               | p       | Dmenu                                     |
+| M+<shift>       | <enter> | Terminal                                  |
+| M               | b       | Toggle bar                                |
+| M               | j       | Focus next window                         |
+| M               | k       | Focus prev window                         |
+| M               | i       | Inc master pane                           |
+| M               | d       | Desc master pane                          |
+| M+<alt>         | h       | Change window width to the right          |
+| M+<alt>         | l       | Change window size to the left            |
+| M               | <enter> | Swap master window with prev              |
+| M               | <tab>   | Go between prev and current workspace     |
+| M+<shift>       | w       | Kill current client                       |
+| M               | t       | Toggle tiling layout                      |
+| M               | f       | Toggle floating layout                    |
+| M               | m       | Toggle fulescreen layout                  |
+| M               | v       | Spawn camera                              |
+| M               | <spc>   | Switch between prev and current layout    |
+| M+<shift>       | <spc>   | Switch between tiling and floating layout |
+| M               | 0       | Show all active windows on screen         |
+| M+<shift>       | 0       | Show active window on any workspace       |
+| M               | h       | Focus prev monitor                        |
+| M               | l       | Focus next monitor                        |
+| M+<shift>       | h       | Move window to prev screen                |
+| M+<shift>       | l       | Move window to next screen                |
+| M               | -       | Decrease gaps                             |
+| M               | =       | Increase gaps                             |
+| M+<shift>       | =       | Set gaps to 5px                           |
+| M+<alt>         | =       | Set gaps to 0px                           |
+| M               | 1-9     | Go between workspaces                     |
+| M+<alt>         | 1-9     | Show workpsace on current workspace       |
+| M+<shift>       | 1-9     | Move current window to workspace          |
+| M+<shift>+<alt> | 1-9     | Show current workspace on workspace x     |
+| M+<shift>       | q       | Restart dwm                               |
+
+
